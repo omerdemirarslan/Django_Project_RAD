@@ -79,12 +79,10 @@ WSGI_APPLICATION = 'rad.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': config('HOST'),
-        'NAME': config('DATABASE'),
-        'USER': config('USER'),
-        'PASSWORD': config('PASSWORD'),
-        'PORT': 5432,
-        'CONN_MAX_AGE': 300
+        'HOST': os.environ.get('DATABASE_HOST'),
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD')
     }
 }
 
