@@ -18,7 +18,6 @@ RUN pip install -r /requirements.txt
 # Remove dependencies
 RUN apk del .tmp-build-deps
 
-
 COPY . /app
 
 WORKDIR /app
