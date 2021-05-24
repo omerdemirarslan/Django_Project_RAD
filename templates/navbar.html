@@ -7,17 +7,17 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+            <li class="nav-item active nav-item {% if 'home' in request.path %} active {% endif %}">
+                <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if 'trainers' in request.path %} active {% endif %}">
                 <a class="nav-link" href="#">Trainers</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {% if 'signup' in request.path %} active {% endif %}">
                 <a class="nav-link" href="#">Sign Up</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Registration</a>
+            <li class="nav-item {% if 'registration' in request.path %} active {% endif %}">
+                <a class="nav-link" href="{% url 'registration-form' %}">Registration</a>
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
