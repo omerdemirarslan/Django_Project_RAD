@@ -3,6 +3,7 @@
 {% load static %}
 
 <html lang="en">
+<!-- Start Header -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -10,93 +11,127 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock%}</title>
 
+    <!-- Google Font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+
+    <!-- HTML5 Shiv v3.7.0 JS -->
+    <script type="text/javascript" src="{% static 'js/html5shiv.js' %}"></script>
+
     <!-- CSS Files Path -->
     <!-- Animate CSS -->
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- Bootstrap RTL CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.rtl.min.css' %}">
     <!-- Bootstrap Grid CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.min.css' %}">
     <!-- Bootstrap Grid RTL CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-grid.rtl.min.css' %}">
     <!-- Bootstrap Reboot CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.min.css' %}">
     <!-- Bootstrap Reboot RTL CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-reboot.rtl.min.css' %}">
     <!-- Bootstrap Touch Slider CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap-touch-slider.css' %}">
     <!-- Bootstrap Utilities CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap-utilities.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-utilities.min.css' %}">
     <!-- Bootstrap Utilities RTL CSS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap-utilities.rtl.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-utilities.rtl.min.css' %}">
     <!-- Colors CSS -->
     <link rel="stylesheet" href="{% static 'css/colors.css' %}">
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="{% static 'css/component.css' %}">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
-    <!-- Flaticon CSS -->
-    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <!-- Flag Icon Min CSS -->
+    <link rel="stylesheet" href="{% static 'css/flag-icon.min.css' %}">
     <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <!-- Icofont CSS -->
+    <link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'css/navbar-top-fixed.css' %}">
     <!-- Owl Carousel CSS -->
     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
     <!-- PR Loading CSS -->
     <link rel="stylesheet" href="{% static 'css/pr_loading.css' %}">
     <!-- Pretty Photo CSS -->
     <link rel="stylesheet" href="{% static 'css/prettyPhoto.css' %}">
+    <!-- Reset Min CSS -->
+    <link rel="stylesheet" href="{% static 'css/reset.min.css' %}">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <!-- Sign Up Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/sign-up-style.css' %}">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Themify Icons CSS -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
     <!-- Timeline CSS -->
     <link rel="stylesheet" href="{% static 'css/timeline.min.css' %}">
     <!-- Versions CSS -->
     <link rel="stylesheet" href="{% static 'css/versions.css' %}">
 
+    <!-- Fonts Files Path -->
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+
     <!-- JS Files Path -->
-    <!-- Custom Places Example JS -->
-    <link rel="stylesheet" href="{% static 'css/01-custom-places-example.js' %}">
     <!-- All JS -->
-    <link rel="stylesheet" href="{% static 'css/all.js' %}">
+    <script type="text/javascript" src="{% static 'js/all.js' %}"></script>
     <!-- Animate JS -->
-    <link rel="stylesheet" href="{% static 'css/animate.js' %}">
+    <script type="text/javascript" src="{% static 'js/animate.js' %}"></script>
     <!-- Bootstrap Bundle JS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.bundle.js' %}">
-    <!-- Bootstrap ESM JS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.esm.js' %}">
+    <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <!-- Bootstrap JS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap.js' %}">
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
     <!-- Bootstrap Touch Slider JS -->
-    <link rel="stylesheet" href="{% static 'css/bootstrap-touch-slider.js' %}">
-    <!-- Custom JS -->
-    <link rel="stylesheet" href="{% static 'css/custom.js' %}">
-    <!-- Hoverdir JS -->
-    <link rel="stylesheet" href="{% static 'css/hoverdir.js' %}">
+    <script type="text/javascript" src="{% static 'js/bootstrap-touch-slider.js' %}"></script>
+    <!-- i18next Min JS -->
+    <script type="text/javascript" src="{% static 'js/i18next.min.js' %}"></script>
+    <!-- i18next Browser Language Detector Min JS -->
+    <script type="text/javascript" src="{% static 'js/i18nextBrowserLanguageDetector.min.js' %}"></script>
+    <!-- i18next Min JS -->
+    <script type="text/javascript" src="{% static 'js/i18nextXHRBackend.min.js' %}"></script>
+    <!-- Jquery Easing Min JS -->
+    <script type="text/javascript" src="{% static 'js/jquery.easing.min.js' %}"></script>
     <!-- Jquery Pretty Photo JS -->
-    <link rel="stylesheet" href="{% static 'css/jquery.prettyPhoto.js' %}">
-    <!-- Jquery Vide JS -->
-    <link rel="stylesheet" href="{% static 'css/jquery.vide.js' %}">
-    <!-- Map JS -->
-    <link rel="stylesheet" href="{% static 'css/map.js' %}">
-    <!-- Mapsed JS -->
-    <link rel="stylesheet" href="{% static 'css/mapsed.js' %}">
+    <script type="text/javascript" src="{% static 'js/jquery.prettyPhoto.js' %}"></script>
+    <!-- Jquery Slim Scroll JS -->
+    <script type="text/javascript" src="{% static 'js/jquery.slimscroll.js' %}"></script>
+    <!-- Jquery-ui Min JS -->
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- jquery-i18 Next Min JS -->
+    <script type="text/javascript" src="{% static 'js/jquery-i18next.min.js' %}"></script>
+    <!-- Jquery UI Min JS -->
+    <script type="text/javascript" src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <!-- Main JS -->
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
     <!-- Modernizer JS -->
-    <link rel="stylesheet" href="{% static 'css/modernizer.js' %}">
-    <!-- Owl Carousel JS -->
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.js' %}">
-    <!-- Portfolio JS -->
-    <link rel="stylesheet" href="{% static 'css/portfolio.js' %}">
-    <!-- Retina JS -->
-    <link rel="stylesheet" href="{% static 'css/retina.js' %}">
-    <!-- Scroll JS -->
-    <link rel="stylesheet" href="{% static 'css/scroll.js' %}">
-    <!-- Timeline JS -->
-    <link rel="stylesheet" href="{% static 'css/timeline.min.js' %}">
+    <script type="text/javascript" src="{% static 'js/modernizr.js' %}"></script>
+    <!-- Popper Min JS -->
+    <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
 </head>
+<!-- End Header -->
 
+<!-- Start Body -->
 <body>
-    {% block content %}
-    {% endblock %}
+<!-- Start Including Navigation Bar -->
+{% block navbar %}
+    {% include "navbar.html" %}
+{% endblock %}
+<!-- End Including Navigation Bar -->
+
+<!-- Start content -->
+{% block content %}
+{% endblock %}
+<!-- End Content -->
 </body>
+<!-- End Body -->
 
+<!-- Start Script -->
+{% block script %}
+{% endblock %}
+<!-- End Script -->
 </html>
-
