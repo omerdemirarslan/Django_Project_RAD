@@ -38,3 +38,15 @@ class RegistrationForm(forms.Form):
             "first_name", "last_name", "mail_address", "password", "confirm_password", "github_address",
             "linkedin_address", "twitter_address"
         ]
+
+
+class LoginForm(forms.Form):
+    """
+    This Class Create Login Form For User Authentication
+    """
+    user_name = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'User Name'})
+    )
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'})
+    )

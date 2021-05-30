@@ -3,26 +3,33 @@ import logging
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.cache import cache_page
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views.decorators.http import require_http_methods
 from django.contrib.auth import authenticate, login, logout
 
-from .helper.forms import RegistrationForm
+from .helper.forms import RegistrationForm, LoginForm
 from .helper.general_helper import create_new_user
-from .helper.messages import PASSWORD_CONFIRM_PASSWORD_NOT_SAME
+from .helper.messages import *
 
 logger = logging.getLogger(__name__)
 
 
+@cache_page(60 * 15)
 def get_login_page(request):
     """
     This Function Renders The Login Page and Login Form
     :param request:
     :return:
     """
-    return render(request, "forms/login.html", {})
+    login_form = LoginForm()
+
+    return render(request, "forms/login.html", {
+        "login_form": login_form
+    })
 
 
+@csrf_exempt
 def get_register_page(request):
     """
     This Function Render Registration Page and Registration Form
@@ -36,6 +43,7 @@ def get_register_page(request):
     })
 
 
+@csrf_exempt
 def get_home_page(request):
     """
     This Function Renders The Home Page When First Entering The Web Site
@@ -46,6 +54,7 @@ def get_home_page(request):
 
 
 @require_http_methods(["POST"])
+@csrf_exempt
 def create_new_developer_user(request):
     """
     This Function Create The New Record Developer User In The Developer Users Model
@@ -87,3 +96,41 @@ def create_new_developer_user(request):
     return redirect("registration-form", {
         "register_form": register_form
     })
+
+
+@require_http_methods(["POST"])
+@csrf_exempt
+def get_login(request):
+    """
+    This Function Controls User Login Authenticate
+    :param request:
+    :return:
+    """
+    login_form = LoginForm(request.POST)
+
+    if login_form.is_valid():
+        user_name = login_form.cleaned_data["user_name"]
+        password = login_form.cleaned_data["password"]
+
+        user = authenticate(request,
+                            username=user_name,
+                            password=password
+                            )
+
+        if user is not None:
+            if user.is_active:
+                login(request, user)
+
+                return redirect("home")
+            else:
+                messages.warning(request, INVALID_USER_LOGIN)
+
+                return redirect("registration-form")
+        else:
+            messages.error(request, WRONG_USER_OR_PASSWORD)
+
+            return redirect("registration-form")
+    else:
+        messages.warning(request, WRONG_USER_OR_PASSWORD)
+
+        return redirect("login-page")

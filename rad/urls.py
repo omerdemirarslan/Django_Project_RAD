@@ -22,5 +22,6 @@ urlpatterns = [
     path('login/rad/', views.get_login_page, name="login-page"),
     path('', views.get_home_page, name="home"),
     path('registration/form/developer-user/', views.get_register_page, name="registration-form"),
-    path('create/developer-user/', views.create_new_developer_user, name="create-developer-user")
+    path('create/developer-user/', views.create_new_developer_user, name="create-developer-user"),
+    path('get/login/', views.get_login, name="get-login")
 ]
