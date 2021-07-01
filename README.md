@@ -16,7 +16,7 @@ https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 ### Setup The Repository
 
 ```bash
-https://github.com/omerdemirarslan/Django_Project_RAD.git
+git clone https://github.com/omerdemirarslan/Django_Project_RAD.git
 ```
 
 ### Create The .env File On Project Directory
