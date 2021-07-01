@@ -30,8 +30,5 @@ class DeveloperUsers(models.Model):
         ordering = ('-created_at',)
 
     def __str__(self):
-        return "User Name: {user_name}, Name: {name}, Surname: {surname}, Twitter: {twitter}, Linkedin: {linkedin}, " \
-               "Github: {github}".format(user_name=self.mail_address, name=self.first_name, surname=self.last_name,
-                                         twitter=self.twitter_address, linkedin=self.linkedin_address,
-                                         github=self.github_address
-                                         )
+        return F"User Name: {self.mail_address}, Name: {self.first_name}, Surname: {self.last_name}, " \
+               F"Twitter: {self.twitter_address}, Linkedin: {self.linkedin_address}, Github: {self.github_address}"
